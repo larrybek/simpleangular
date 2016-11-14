@@ -1,0 +1,85 @@
+.border-radius(@radius){
+-webkit-border-radius:@radius;
+   -moz-border-radius:@radius;
+    border-radius:@radius;
+}
+.custom-radius(@tl:0, @tr:0, @br:0, @bl:0){
+-webkit-border-radius:@tl @tr @br @bl;
+   -moz-border-radius:@tl @tr @br @bl;
+    border-radius:@tl @tr @br @bl;
+}
+.box-shadow(@x, @y, @blur, @shadow, @shadowColor){
+-webkit-box-shadow: @x @y @blur @shadow @shadowColor;
+   -moz-box-shadow: @x @y @blur @shadow @shadowColor;
+        box-shadow: @x @y @blur @shadow @shadowColor;
+}
+.box-shadow-inset(@x, @y, @blur, @shadow, @shadowColor){
+-webkit-box-shadow: inset @x @y @blur @shadow @shadowColor;
+   -moz-box-shadow: inset @x @y @blur @shadow @shadowColor;
+        box-shadow: inset @x @y @blur @shadow @shadowColor;
+}
+.font-options(@size:12px, @color:#000, @weight:normal, @style:normal){
+  font-size:@size;
+  color:@color;
+  font-weight:@weight;
+  font-style:@style;
+}
+.transition(@transition) {
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -o-transition: @transition;
+  transition: @transition;
+}
+.opacity(@opacity) {
+    opacity: @opacity / 100;
+    filter: ~"alpha(opacity=@{opacity})";
+}
+.vertical-align(@position: relative) {
+  position: @position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.horizontal-align(@position: relative) {
+  position: @position;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.all-align(@position: relative) {
+  position: @position;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.placeholderStyle(@color){
+  &::-webkit-input-placeholder {
+     color: @color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: @color;  
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: @color;  
+  }
+
+  &:-ms-input-placeholder {  
+     color: @color;  
+  }
+}
+
+.animate-duration(@duration){
+  -webkit-animation-duration:@duration;
+  animation-duration:@duration;
+}
+.gradientFunction(@start, @end){
+    background-image: -moz-linear-gradient( 0deg,  @start 0%, @end 100%);
+    background-image: -webkit-linear-gradient( 0deg, @start 0%, @end 100%);
+    background-image: -ms-linear-gradient( 0deg, @start 0%, @end 100%);
+}

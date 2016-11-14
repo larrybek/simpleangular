@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+  	<head>
+	    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	    <meta name="description" content="">
+	    <meta name="author" content="Living Stones">
+
+	    <title>Project Name</title>
+
+        <!-- Custom styles for this template -->
+	    <link href="css/screen.css" rel="stylesheet">
+
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+		<script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBMRA4atlt-cbcGyORXd8yserkP9eWrIsk",
+		    authDomain: "testproject-4b7d2.firebaseapp.com",
+		    databaseURL: "https://testproject-4b7d2.firebaseio.com",
+		    storageBucket: "testproject-4b7d2.appspot.com",
+		    messagingSenderId: "273159253055"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		
+
+	    <script type="text/javascript" src="js/app.js"></script>
+	    <script type="text/javascript" src="js/services/authentication.js"></script>
+	    <script type="text/javascript" src="js/controller/registration.js"></script>
+		<script type="text/javascript" src="js/controller/success.js"></script>
+
+	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body>
+
+		<header>
+			<nav class="cf" ng-include="'views/nav.html'"></nav>
+		</header>
+
+		<div class="userinfo" ng-show="loggeUser" ng-controller="RegistrationController">
+			<p>Hi {{ loggeUser.firstname}}. Thanks for logging. <a ng-href="#/login" ng-click="logout();">Logout</a> <a ng-href="#/login" ng-click="delete();">Delete</a></p>	
+		</div>
+
+		<div class="page">
+			<main class="cf" ng-view></main>
+		</div>
+		
+		<!-- Bootstrap core JavaScript
+	    ================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+	    <script src="js/vendor/bootstrap.min.js"></script>
+	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	    <script src="js/ie10-viewport-bug-workaround.js"></script>
+	</body>
+</html>
